@@ -1,0 +1,22 @@
+[Unit]
+Description=Get bits from random.org
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/etc/rand/getrand.nist.gov.sh
+
+ProtectHome=true
+ProtectKernelLogs=true
+
+MemoryAccounting=true
+IOAccounting=true
+IPAccounting=true
+
+CPUSchedulingPolicy=idle
+IOSchedulingClass=best-effort
+
+[Install]
+WantedBy=multi-user.target
+

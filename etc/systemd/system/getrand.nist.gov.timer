@@ -1,0 +1,13 @@
+[Unit]
+Description=Get bits from random.org
+Requires=getrand.random.org.service
+
+[Timer]
+Unit=getrand.random.org.service
+OnCalendar=*:0/3
+AccuracySec=60
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target
+
