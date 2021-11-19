@@ -1,0 +1,22 @@
+[user]
+  email = cat@catball.dev
+  name = Cat Lee Ball 🎶🎷🐀
+[core]
+  editor = vim
+  pager = delta
+[pull]
+  ff = only
+[diff]
+  tool = delta
+  renames = copy
+  context = 5
+  colorMoved = default
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = line-numbers decorations
+  line-numbers = true
+[init]
+  defaultBranch = main
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
