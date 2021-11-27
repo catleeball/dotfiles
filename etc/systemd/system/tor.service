@@ -1,0 +1,20 @@
+[Unit]
+Description=Tor Relay Node
+After=network.target
+
+[Service]
+Type=simple
+User=tor
+ExecStart=/usr/local/bin/tor -f /tor/torrc
+ExecRestart=/usr/bin/pkill -HUP tor
+Restart=on-failure
+RestartSec=5
+ProtectHome=true
+MemoryAccounting=true
+IOAccounting=true
+IPAccounting=true
+Nice=-1
+
+[Install]
+WantedBy=multi-user.target
+

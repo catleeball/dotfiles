@@ -1,0 +1,21 @@
+# ===== /tor/torrc =====
+Nickname      phxTorRelay
+ContactInfo   contact_at_catball_dot_dev
+Address       152.70.154.67
+ExitPolicy    reject *:*
+ORPort        443
+DirPort       80
+DirCache      1
+ExitRelay     0
+SocksPort     0
+HardwareAccel 1
+SafeLogging   1
+RunAsDaemon   0
+AddressDisableIPv6 1
+Log notice syslog
+DataDirectory /tor/dataDir
+AccountingStart month 22 03:00
+AccountingMax 900 GBits
+MaxMemInQueues 20 GBits
+NumCPUs 4
+
