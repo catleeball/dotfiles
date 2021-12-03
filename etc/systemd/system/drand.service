@@ -1,0 +1,21 @@
+[Unit]
+Description=Get bits from drand
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=bash /etc/rand/drand.sh
+
+ProtectKernelLogs=true
+
+MemoryAccounting=true
+IOAccounting=true
+IPAccounting=true
+
+CPUSchedulingPolicy=idle
+IOSchedulingClass=best-effort
+
+[Install]
+WantedBy=multi-user.target
+
