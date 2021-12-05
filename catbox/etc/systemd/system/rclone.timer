@@ -1,0 +1,12 @@
+[Unit]
+Description=Offsite backup of local restic database
+Requires=rclone.service
+
+[Timer]
+Unit=rclone.service
+OnCalendar=Mon..Fri 06:40:00
+RandomizedDelaySec=120m
+AccuracySec=125m
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Rclone Restic backups to GDrive
+Wants=rclone.timer network-online.target
+After=network-online.target
+AssertPathIsDirectory=/mnt/hdd/restic
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/rclone --config /etc/restic/rclone.conf sync --fast-list --stats-one-line-date /mnt/hdd/restic ggdrive:/restic --verbose
+
+[Install]
+WantedBy=multi-user.target
