@@ -1,0 +1,20 @@
+[Unit]
+Description=Tor Snowflake Bridge
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/tor/snowflake/proxy
+Restart=on-failure
+RestartSec=5
+ProtectHome=true
+CPUAccounting=true
+MemoryAccounting=true
+IOAccounting=true
+IPAccounting=true
+Nice=-1
+
+[Install]
+WantedBy=multi-user.target
+
