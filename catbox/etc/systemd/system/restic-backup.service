@@ -1,0 +1,19 @@
+[Unit]
+Description=Backup localhost to /mnt/hdd/restic
+Wants=restic-backup.timer
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/bash /etc/restic/backup.sh
+
+CPUSchedulingPolicy=batch
+MemoryHigh=10G
+Nice=10
+
+CPUAccounting=yes
+MemoryAccounting=yes
+IOAccounting=yes
+
+[Install]
+WantedBy=multi-user.target

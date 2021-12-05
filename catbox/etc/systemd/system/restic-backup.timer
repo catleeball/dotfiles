@@ -1,0 +1,11 @@
+[Unit]
+Description=Backup localhost to /mnt/hdd/restic on the 30th minute of every hour.
+Requires=restic-backup.service
+
+[Timer]
+Unit=restic-backup.service
+OnCalendar=*-*-* *:30:00
+AccuracySec=120
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Cleanup old Restic snapshots.
+Requires=restic-cleanup.service
+
+[Timer]
+Unit=restic-cleanup.service
+OnCalendar=*-*-* 01:45:00
+AccuracySec=5m
+# Run at boot if the last trigger was missed.
+# For times when I turn my computer off at night.
+Persistent=true
+
+[Install]
+WantedBy=timers.target
