@@ -1,5 +1,5 @@
 [Unit]
-Description=Get bits from random.org
+Description=Get bits from nist.gov
 After=network.target
 
 [Service]

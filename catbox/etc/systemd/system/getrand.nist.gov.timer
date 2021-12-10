@@ -1,9 +1,9 @@
 [Unit]
-Description=Get bits from random.org
-Requires=getrand.random.org.service
+Description=Get bits from nist.gov
+Requires=getrand.nist.gov.service
 
 [Timer]
-Unit=getrand.random.org.service
+Unit=getrand.nist.gov.service
 OnCalendar=*:0/3
 AccuracySec=60
 RandomizedDelaySec=120
